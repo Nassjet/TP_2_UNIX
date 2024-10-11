@@ -27,8 +27,29 @@ On se connecte avec la commande `ssh -i id_rsa.pub root@10.20.0.137`spécifique 
 
 ### Sécurisation 
 
-On crée une copie de ma cmé avec `ssh-copy-id root@10.20.0.137`
+On crée une copie de la clé avec `ssh-copy-id root@10.20.0.137`: ![image](https://github.com/user-attachments/assets/ecc5dfef-4b47-454a-98d8-6eb4e6d270ad) voici une explication en anglais de comment fonctionne la clé. 
+
 
 ensuite on reconfigure le fichier sshd_config et on remet `PermitRootLogin no` au lieu de yes. 
+
+## Processus
+
+### Etude des processus UNIX 
+
+Voici ce que donne la commande `ps`:
+
+![image](https://github.com/user-attachments/assets/cca8f707-321a-4770-b45c-af3f80881cd5)
+
+La commande ps affiche les processus en cours avec des informations supplémentaires dont TIME qui indique le temps cumulé du processeur. 
+Le processus lancé après le démarrage est systemmd, parce que c'est le premier qu'on retrouve en tapant la commande `ps -e`: 
+
+![image](https://github.com/user-attachments/assets/c9008e24-85b9-4715-ac8d-1afcabe17e1d)
+
+Voici la commande permettant de savoir depuis quand mon serveur tourne 
+
+
+Le processus qui est le plus utilisé par le processeur est la commande en elle-même parce qu'on quand on regarde dans la colonne %CPU soit le pourcentage que chaque processus utilise dans le CPU, tout les processus sont à 0% sauf la commande elle-même. 
+
+
 
 
