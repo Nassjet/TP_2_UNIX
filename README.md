@@ -36,7 +36,7 @@ ensuite on reconfigure le fichier sshd_config et on remet `PermitRootLogin no` a
 
 ### Etude des processus UNIX 
 
-Voici ce que donne la commande `ps`:
+1. Voici ce que donne la commande `ps`:
 
 ![image](https://github.com/user-attachments/assets/cca8f707-321a-4770-b45c-af3f80881cd5)
 
@@ -49,6 +49,21 @@ Voici la commande permettant de savoir depuis quand mon serveur tourne
 
 
 Le processus qui est le plus utilisé par le processeur est la commande en elle-même parce qu'on quand on regarde dans la colonne %CPU soit le pourcentage que chaque processus utilise dans le CPU, tout les processus sont à 0% sauf la commande elle-même. 
+
+Voici le nombre de processus: 
+![image](https://github.com/user-attachments/assets/b92d0829-d46b-4a42-baf6-402f5f73ba2e)
+
+2. grâce à ce lien : [Lien](https://www.funix.org/fr/unix/process.htm)
+On trouve la commande `ps -ef` qui affiche le ppid de chaque pid. 
+
+3. On essaie d'installer le pstree avec `apt search pstree`, il me répond que c'est pas le bon dossier : 
+
+![image](https://github.com/user-attachments/assets/52fc173f-e477-4d08-a224-25100d15178d)
+
+Donc, il faut faire `apt search psmisc` puis `apt install psmisc`
+
+
+
 
 
 
