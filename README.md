@@ -51,16 +51,36 @@ Voici la commande permettant de savoir depuis quand mon serveur tourne
 Le processus qui est le plus utilisé par le processeur est la commande en elle-même parce qu'on quand on regarde dans la colonne %CPU soit le pourcentage que chaque processus utilise dans le CPU, tout les processus sont à 0% sauf la commande elle-même. 
 
 Voici le nombre de processus: 
+
 ![image](https://github.com/user-attachments/assets/b92d0829-d46b-4a42-baf6-402f5f73ba2e)
 
-2. grâce à ce lien : [Lien](https://www.funix.org/fr/unix/process.htm)
+Bon finalement je viens d'apprendre que ps, c'est les processus en cours, donc pas tout ceux depuis le démarrage, finalement lorsqu'on fait ps, c'est bien le dernier PID affiché qui compte, ainsi il y a 1188 processus depuis le début.
+
+![image](https://github.com/user-attachments/assets/5dc00d61-5da6-453b-bd7d-ab053dab21f8)
+
+
+2. grâce à ce lien :
+    [Lien](https://www.funix.org/fr/unix/process.htm)
 On trouve la commande `ps -ef` qui affiche le ppid de chaque pid. 
 
-3. On essaie d'installer le pstree avec `apt search pstree`, il me répond que c'est pas le bon dossier : 
+4. On essaie d'installer le pstree avec `apt search pstree`, il me répond que c'est pas le bon dossier : 
 
 ![image](https://github.com/user-attachments/assets/52fc173f-e477-4d08-a224-25100d15178d)
 
 Donc, il faut faire `apt search psmisc` puis `apt install psmisc`
+
+Ensuite pour trier le top en fonction du pourcentage d'utilisation de la mémoire c'est `top -o %MEM` [Lien](https://www.malekal.com/top-lister-processus-linux/)
+
+Le processus le plus gourmand est systemmd aussi bien en terme de cpu que mémoire.  
+
+![image](https://github.com/user-attachments/assets/f4697f6f-130c-4981-8c74-e147227df788)
+
+Pour changer la couleur dans top il faut aller dans top et taper la touche "z" : 
+[Lien](https://www.malekal.com/top-lister-processus-linux/#Comment_changer_les_couleurs)
+
+Htop c'est plus beau déjà, ensuite il y a moins de lignes, ensuite il y a un menu qui peut aider en bas :
+
+![image](https://github.com/user-attachments/assets/64234467-8a2a-49db-b3f9-789d7af98ed4)
 
 
 
