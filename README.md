@@ -122,4 +122,3 @@ A l'aide la commande `dmesg | grep -i cpu` on trouve que il détecte un CPU virt
 Enfin, avec la commande `dmesg | grep -i network` il détecte : Intel(R) PRO/1000 Network Driver
 
 ![image](https://github.com/user-attachments/assets/5c6d6ae3-0ef1-4718-8305-72c373ddcf71)
-![image](https://github.com/user-attachments/assets/20db287c-26fb-480f-b709-24e954e1a98b)
