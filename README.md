@@ -115,3 +115,11 @@ Le service "cron" permet d'exécuter des tâches planifiées à des intervalles 
 La commande `tail -f` permet de suivre un fichier en temps réel, affichant les nouvelles lignes au fur et à mesure qu'elles sont ajoutées. 
 
 Le fichier `/etc/logrotate.conf` est un fichier de configuration pour le service logrotate, qui gère la rotation des fichiers de journalisation (logs) sur un système Linux.
+
+A l'aide la commande `dmesg | grep -i cpu` on trouve que il détecte un CPU virtuel : 
+![image](https://github.com/user-attachments/assets/81195dde-d0f4-4773-befd-a5f79a17352c)
+
+Enfin, avec la commande `dmesg | grep -i network` il détecte : Intel(R) PRO/1000 Network Driver
+
+![image](https://github.com/user-attachments/assets/5c6d6ae3-0ef1-4718-8305-72c373ddcf71)
+![image](https://github.com/user-attachments/assets/20db287c-26fb-480f-b709-24e954e1a98b)
