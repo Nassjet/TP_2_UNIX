@@ -83,8 +83,35 @@ Htop c'est plus beau déjà, ensuite il y a moins de lignes, ensuite il y a un m
 ![image](https://github.com/user-attachments/assets/64234467-8a2a-49db-b3f9-789d7af98ed4)
 
 
+### Exercice 2 : Arrêt d'un processus
 
+Ici on rajoute les programmes grâce à la commande `nano date-sh` puis on les exécute avec juste `./` devant le nom du programme, ils s'executent mais il faut les mettre en arrière-plan avec ctrl-Z sinon on ne peut plus rien faire. 
+Ensuite on regarde les scripts en cours avec la commande job, comme on a mit les scripts en arrière plan, on les ramene au premier plan avec `fg %1` fg pour "foreground" et le %1 pour le numéro du processus qu'on veut arreter, et là il faut juste faire Ctrl+C . 
 
+Ensuite on essaie de faire la même chose avec `ps` et `kill`, ça donne `ps aux | grep date` pour récupérer le PID et ensuite on execute `kill *PID*` en mettant le PID voulu pour arrêter un script. 
 
+Selon le man de sh, ./bin/sh permet d'indiquer au script qu'il doit être executé avec le script sh. Le `while` crée une boucle infinie, qui va dans un premier temps faire une pause de 1 seconde avec `sleep 1`. 
+Puis va afficher avec `echo` et enfin affiche la date actuelle, tout ça à l'infini, tant qu'on arrête pas le programme. 
 
+### Exercice 3 : les tubes 
 
+`ls | cat`: liste les scripts
+`ls -l | cat > liste`: redirige tout les fichiers afficher par ls dans un fichier liste. 
+`ls -l  | tee liste`: affiche les droits des d'écriture de lecture et de suppresion. 
+`ls -l | tee liste | wc -l`: compte le nombre de scripts qui existent dans le fichier liste. 
+
+### Exercie 4: 
+
+Encore une fois, on cherche le package rsyslog puis on l'installe avec les commandes `apt`, ensuite on lance le service avec `systemctl restart rsyslog` puis on vérifie qu'il est bien lancé avec `systemctl status rsyslog`. 
+
+On trouve grâce au statut la ligne du PID démon : 
+
+![image](https://github.com/user-attachments/assets/54ecf769-2264-4616-b095-96f5c3e080ef)
+
+Les messages standards sont écrits dans le fichier `/var/log/syslog`. On vérifie et il y a beaucoup de messages. 
+
+Le service "cron" permet d'exécuter des tâches planifiées à des intervalles réguliers. Les tâches sont définies dans des fichiers appelés crontabs, où on peut spécifier des commandes à exécuter à des horaires précis.
+
+La commande `tail -f` permet de suivre un fichier en temps réel, affichant les nouvelles lignes au fur et à mesure qu'elles sont ajoutées. 
+
+Le fichier `/etc/logrotate.conf` est un fichier de configuration pour le service logrotate, qui gère la rotation des fichiers de journalisation (logs) sur un système Linux.
